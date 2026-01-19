@@ -165,6 +165,17 @@
             padding: 0 5%;
         }
 
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 5%;
+        }
+
         .scroll-container {
             display: flex;
             overflow-x: auto;
@@ -278,10 +289,106 @@
             transform: translateY(-5px);
         }
 
+        /* Clubs & Co-Curricular Section */
+        .clubs-section {
+            padding: 6rem 5%;
+            background-color: var(--light);
+        }
+
+        .clubs-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .club-category {
+            margin-bottom: 5rem;
+        }
+
+        .club-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .club-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .club-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .club-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .club-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .club-title {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .club-content {
+            padding: 2rem;
+        }
+
+        .club-narrative {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+
+        .club-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .club-gallery img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .club-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .club-gallery-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 8px;
+            height: 100px;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
         /* Values Section */
         .values-section {
             padding: 6rem 5%;
-            background-color: var(--light);
+            background-color: white;
         }
 
         .values-container {
@@ -293,7 +400,7 @@
         }
 
         .value-card {
-            background-color: white;
+            background-color: var(--light);
             border-radius: 15px;
             padding: 2.5rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -377,6 +484,10 @@
             .sections-container {
                 flex-direction: column;
             }
+            
+            .club-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
         }
 
         @media (max-width: 768px) {
@@ -427,6 +538,14 @@
             .section-card h2 {
                 font-size: 2.2rem;
             }
+            
+            .club-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .club-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 480px) {
@@ -448,6 +567,14 @@
             
             .value-card {
                 padding: 2rem 1.5rem;
+            }
+            
+            .club-content {
+                padding: 1.5rem;
+            }
+            
+            .club-gallery {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -480,6 +607,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#primary">Primary School</a></li>
                     <li><a href="#junior">Junior School</a></li>
+                    <li><a href="#clubs">Clubs & Co-Curricular</a></li>
                     <li><a href="#admissions">Admissions</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -492,7 +620,7 @@
         <div class="hero-content">
             <h1 class="hero-title">Education Rooted in Faith, Compassion, and Excellence</h1>
             <p class="hero-subtitle">We teach, model, and encourage learners in partnership with the family and community to produce respectful and responsible globally acceptable citizens.</p>
-            <a href="#admissions" class="hero-btn">Discover Our Journey</a>
+            <a href="#about" class="hero-btn">Discover Our Journey</a>
         </div>
     </section>
 
@@ -536,12 +664,166 @@
         <div class="section-card primary-section" id="primary">
             <h2>Primary School</h2>
             <p>Our primary school program focuses on foundational learning, character development, and holistic growth for children in their formative years. We provide a nurturing environment that balances academic excellence with moral values.</p>
-            <a href="#admissions" class="section-btn">Learn More</a>
+            <a href="#clubs" class="section-btn">Explore Clubs</a>
         </div>
         <div class="section-card junior-section" id="junior">
             <h2>Junior School</h2>
             <p>The junior school curriculum builds upon foundational knowledge, preparing students for higher education with advanced academics, critical thinking skills, and leadership development opportunities.</p>
-            <a href="#admissions" class="section-btn">Explore Junior School</a>
+            <a href="#clubs" class="section-btn">Join Our Clubs</a>
+        </div>
+    </section>
+
+    <!-- Clubs & Co-Curricular Section -->
+    <section class="clubs-section" id="clubs">
+        <div class="clubs-container">
+            <h2 class="section-title">Clubs & Co-Curricular Activities</h2>
+            <p class="section-subtitle">We offer diverse clubs and activities that cater to various interests, helping students develop skills beyond the classroom while fostering teamwork, leadership, and personal growth.</p>
+            
+            <div class="club-grid">
+                <!-- Science Club -->
+                <div class="club-card">
+                    <div class="club-header">
+                        <div class="club-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3 class="club-title">Science Club</h3>
+                    </div>
+                    <div class="club-content">
+                        <p class="club-narrative">Our Science Club fosters curiosity and innovation through hands-on experiments and scientific exploration. Students engage in exciting projects, from chemistry experiments to robotics, developing critical thinking and problem-solving skills. The club participates in science fairs and competitions, encouraging young scientists to explore the wonders of the natural world.</p>
+                        <div class="club-gallery">
+                            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Science Club Activity">
+                            <img src="https://images.unsplash.com/photo-1554475900-0a0350e0d7ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Students conducting experiment">
+                            <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Science fair project">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Art Club -->
+                <div class="club-card">
+                    <div class="club-header">
+                        <div class="club-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="club-title">Art Club</h3>
+                    </div>
+                    <div class="club-content">
+                        <p class="club-narrative">The Art Club provides a creative space for students to express themselves through various artistic mediums. From painting and drawing to sculpture and digital art, members explore different techniques and styles. The club organizes art exhibitions, mural projects, and community art initiatives, helping students develop their artistic talents while appreciating diverse forms of creative expression.</p>
+                        <div class="club-gallery">
+                            <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Art Club painting session">
+                            <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Student artwork">
+                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Art exhibition">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Journalism Club -->
+                <div class="club-card">
+                    <div class="club-header">
+                        <div class="club-icon">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <h3 class="club-title">Journalism Club</h3>
+                    </div>
+                    <div class="club-content">
+                        <p class="club-narrative">Our Journalism Club trains young reporters in news writing, interviewing, and media production. Students publish the school newspaper, manage the school blog, and create multimedia content. Through this club, members develop communication skills, learn about ethical journalism, and stay informed about school events and community issues, preparing them for potential careers in media and communications.</p>
+                        <div class="club-gallery">
+                            <img src="https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Students working on newspaper">
+                            <img src="https://images.unsplash.com/photo-1557426272-f5e2a5d1ff2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Interview session">
+                            <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Camera work">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nutrition Club -->
+                <div class="club-card">
+                    <div class="club-header">
+                        <div class="club-icon">
+                            <i class="fas fa-apple-alt"></i>
+                        </div>
+                        <h3 class="club-title">Nutrition Club</h3>
+                    </div>
+                    <div class="club-content">
+                        <p class="club-narrative">The Nutrition Club promotes healthy eating habits and nutritional awareness among students. Members learn about balanced diets, food preparation, and the importance of nutrition for academic performance and overall well-being. The club maintains a school garden, organizes cooking demonstrations, and educates the school community about making healthy food choices for a better lifestyle.</p>
+                        <div class="club-gallery">
+                            <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Healthy food preparation">
+                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Nutrition education">
+                            <img src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="School garden">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wildlife Club -->
+                <div class="club-card">
+                    <div class="club-header">
+                        <div class="club-icon">
+                            <i class="fas fa-paw"></i>
+                        </div>
+                        <h3 class="club-title">Wildlife Club</h3>
+                    </div>
+                    <div class="club-content">
+                        <p class="club-narrative">The Wildlife Club fosters environmental stewardship and appreciation for biodiversity. Students learn about local ecosystems, conservation efforts, and wildlife protection. Activities include nature walks, bird watching, tree planting, and educational visits to conservation areas. The club instills responsibility for environmental protection and appreciation for Kenya's rich natural heritage.</p>
+                        <div class="club-gallery">
+                            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Nature exploration">
+                            <img src="https://images.unsplash.com/photo-1500829243541-74b677fecc30?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Bird watching">
+                            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Tree planting">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- St. John Ambulance -->
+                <div class="club-card">
+                    <div class="club-header">
+                        <div class="club-icon">
+                            <i class="fas fa-first-aid"></i>
+                        </div>
+                        <h3 class="club-title">St. John Ambulance</h3>
+                    </div>
+                    <div class="club-content">
+                        <p class="club-narrative">As part of the international St. John Ambulance organization, this club trains students in first aid, emergency response, and community service. Members learn life-saving skills, participate in health awareness campaigns, and provide first aid support during school events. The club emphasizes the values of service, preparedness, and caring for others in times of need.</p>
+                        <div class="club-gallery">
+                            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="First aid training">
+                            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Emergency response practice">
+                            <img src="https://images.unsplash.com/photo-1584467735871-8db9ac8d0917?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Community service">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scouts Movement -->
+                <div class="club-card">
+                    <div class="club-header">
+                        <div class="club-icon">
+                            <i class="fas fa-campground"></i>
+                        </div>
+                        <h3 class="club-title">Scouts Movement</h3>
+                    </div>
+                    <div class="club-content">
+                        <p class="club-narrative">The Scouts Movement develops character, citizenship, and personal fitness through outdoor activities and community service. Scouts learn survival skills, teamwork, leadership, and environmental conservation. Regular camping trips, hiking expeditions, and community projects help members develop self-reliance, resilience, and a strong sense of responsibility toward their community and environment.</p>
+                        <div class="club-gallery">
+                            <img src="https://images.unsplash.com/photo-1504851149312-7a075b496cc7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Scouts camping">
+                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Team building activities">
+                            <img src="https://images.unsplash.com/photo-1508873696983-2dfd5898f08b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Scouts ceremony">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4K Club -->
+                <div class="club-card">
+                    <div class="club-header">
+                        <div class="club-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3 class="club-title">4K Club</h3>
+                    </div>
+                    <div class="club-content">
+                        <p class="club-narrative">The 4K Club (Kuungana, Kufanya, Kusaidia Kenya - Unite, Act, Help Kenya) focuses on agricultural education and environmental conservation. Students learn modern farming techniques, engage in school farming projects, and promote sustainable agriculture. The club emphasizes food security, entrepreneurship in agriculture, and environmental stewardship, connecting classroom learning with practical agricultural skills.</p>
+                        <div class="club-gallery">
+                            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="School farming project">
+                            <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Agricultural learning">
+                            <img src="https://images.unsplash.com/photo-1592841200221-7ef5c28e2d12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Harvest celebration">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -599,6 +881,7 @@
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#primary">Primary School</a></li>
                     <li><a href="#junior">Junior School</a></li>
+                    <li><a href="#clubs">Clubs & Co-Curricular</a></li>
                     <li><a href="#admissions">Admissions</a></li>
                 </ul>
             </div>
@@ -663,6 +946,40 @@
             } else {
                 header.style.backgroundColor = 'var(--primary)';
             }
+        });
+
+        // Image gallery modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryImages = document.querySelectorAll('.club-gallery img');
+            
+            galleryImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    const modal = document.createElement('div');
+                    modal.style.position = 'fixed';
+                    modal.style.top = '0';
+                    modal.style.left = '0';
+                    modal.style.width = '100%';
+                    modal.style.height = '100%';
+                    modal.style.backgroundColor = 'rgba(0,0,0,0.9)';
+                    modal.style.display = 'flex';
+                    modal.style.justifyContent = 'center';
+                    modal.style.alignItems = 'center';
+                    modal.style.zIndex = '2000';
+                    
+                    const modalImg = document.createElement('img');
+                    modalImg.src = this.src;
+                    modalImg.style.maxWidth = '90%';
+                    modalImg.style.maxHeight = '90%';
+                    modalImg.style.objectFit = 'contain';
+                    
+                    modal.appendChild(modalImg);
+                    document.body.appendChild(modal);
+                    
+                    modal.addEventListener('click', function() {
+                        document.body.removeChild(modal);
+                    });
+                });
+            });
         });
     </script>
 </body>
